@@ -1,6 +1,14 @@
-import '@/styles/globals.css'
-import type { AppProps } from 'next/app'
+import type { AppProps } from 'next/app';
+import '../styles/reset.css';
+import '../styles/common.css';
 
-export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+interface MyAppProps extends AppProps {
+  // emotionCache?: EmotionCache;
+  // dehydratedState: DehydratedState;
+}
+
+export default function App(props: MyAppProps) {
+  const { Component, pageProps } = props;
+
+  return <Component {...pageProps} />;
 }
